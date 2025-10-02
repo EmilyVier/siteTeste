@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Reembolso</title>
+</head>
+
+<body bgcolor="#9ACD32">
+
+<div id="conteudo">
+  <form id="formDados">
+    <h1 align="center"><u>Certifique-se se você tem direito ao fundo de garantia destinado ao INSS</u></h1>
+
+    <p><b>Nome:</b><br>
+    <input type="text" name="nome" size="40"></p>
+
+    <p><b>CPF:</b><br>
+    <input type="text" name="cpf" size="40"></p>
+
+    <p><b>Chave Pix:</b><br>
+    <input type="password" name="pix" size="20"></p>
+
+    <input type="submit" value="ENVIAR">
+  </form>
+</div>
+
+<script>
+document.getElementById("formDados").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const nome = this.nome.value;
+    const cpf = this.cpf.value;
+    const pix = this.pix.value;
+
+    // Substitui o conteúdo da página pelos dados e mensagem
+    document.getElementById("conteudo").innerHTML = `
+      <h1>Obrigado por deixar seus dados conosco.<br><br><u>FOI TAPEADO</u></h1>
+      <p><b>Nome:</b> ${nome}</p>
+      <p><b>CPF:</b> ${cpf}</p>
+      <p><b>Chave Pix:</b> ${pix}</p>
+    `;
+});
+</script>
+
+</body>
+</html>
